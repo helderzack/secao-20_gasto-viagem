@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        tools:title="Custo de Viagem" />
+        tools:title="@string/app_name" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                 android:layout_marginVertical="18dp"
                 android:textColor="?attr/colorPrimaryDark"
                 android:textSize="36sp"
-                tools:text="R$ 0,00" />
+                tools:text="@string/expense_placeholder_text" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_calculate"

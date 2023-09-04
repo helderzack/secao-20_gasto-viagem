@@ -9,4 +9,5 @@
     <string name="gasto_total">SEU GASTO TOTAL SERÁ DE:</string>
     <string name="button_calcular">Calcular</string>
     <string name="warning">Todos os campos devem ser preenchidos!</string>
+    <string name="expense_placeholder_text">R$ 0,00</string>
 </resources>
