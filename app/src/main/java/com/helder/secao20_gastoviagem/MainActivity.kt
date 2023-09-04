@@ -1,8 +1,9 @@
 package com.helder.secao20_gastoviagem
 
 import android.icu.text.NumberFormat
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.helder.secao20_gastoviagem.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,22 +16,46 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             setSupportActionBar(toolbar)
 
-            textViewValorGastoTotal.text = NumberFormat
+            textViewTotalExpense.text = NumberFormat
                 .getCurrencyInstance()
                 .format(0)
 
-            buttonCalcular.setOnClickListener {
-                val distancia = textViewDistancia.text.toString().toDouble()
-                val preco = textViewPreco.text.toString().toDouble()
-                val autonomia = textViewAutonomia.text.toString().toDouble()
-                val gastoTotal = (distancia * preco) / autonomia
-
-                textViewValorGastoTotal.text = NumberFormat
-                    .getCurrencyInstance()
-                    .format(gastoTotal)
+            buttonCalculate.setOnClickListener {
+                calculate(
+                    editTextDistance.text.toString(),
+                    editTextPrice.text.toString(),
+                    editTextAutonomy.text.toString()
+                )
             }
 
             setContentView(root)
         }
+    }
+
+    private fun calculate(
+        distanceText: String,
+        priceText: String,
+        autonomyText: String
+    ) {
+        if (distanceText.isBlank() || distanceText.isEmpty()
+            || priceText.isBlank() || priceText.isEmpty()
+            || autonomyText.isBlank() || autonomyText.isEmpty()
+        ) {
+            Toast.makeText(
+                applicationContext,
+                "Todos os campos devem ser preenchidos!",
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
+
+        val distance = distanceText.toDouble()
+        val price = priceText.toDouble()
+        val autonomy = autonomyText.toDouble()
+        val totalExpense = (distance * price) / autonomy
+
+        binding.textViewTotalExpense.text = NumberFormat
+            .getCurrencyInstance()
+            .format(totalExpense)
     }
 }
