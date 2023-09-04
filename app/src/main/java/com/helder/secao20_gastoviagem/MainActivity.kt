@@ -33,13 +33,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculate(
-        distanceText: String,
-        priceText: String,
-        autonomyText: String
+        distance: String,
+        price: String,
+        autonomy: String
     ) {
-        if (distanceText.isBlank() || distanceText.isEmpty()
-            || priceText.isBlank() || priceText.isEmpty()
-            || autonomyText.isBlank() || autonomyText.isEmpty()
+        if (distance.isBlank() || distance.isEmpty()
+            || price.isBlank() || price.isEmpty()
+            || autonomy.isBlank() || autonomy.isEmpty()
         ) {
             Toast.makeText(
                 applicationContext,
@@ -49,10 +49,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val distance = distanceText.toDouble()
-        val price = priceText.toDouble()
-        val autonomy = autonomyText.toDouble()
-        val totalExpense = (distance * price) / autonomy
+        val totalExpense = (distance.toDouble() * price.toDouble()) / autonomy.toDouble()
 
         binding.textViewTotalExpense.text = NumberFormat
             .getCurrencyInstance()
