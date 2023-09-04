@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         ) {
             Toast.makeText(
                 applicationContext,
-                "Todos os campos devem ser preenchidos!",
+                getString(R.string.warning),
                 Toast.LENGTH_SHORT
             ).show()
             return

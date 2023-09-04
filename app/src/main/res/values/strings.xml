@@ -8,4 +8,5 @@
     <string name="kms_por_litro">KMs por litro</string>
     <string name="gasto_total">SEU GASTO TOTAL SERÁ DE:</string>
     <string name="button_calcular">Calcular</string>
+    <string name="warning">Todos os campos devem ser preenchidos!</string>
 </resources>
