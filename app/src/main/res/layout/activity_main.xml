@@ -23,7 +23,7 @@
             android:layout_height="48dp"
             android:layout_below="@id/toolbar"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:hint="@string/hint_distancia"
             android:importantForAutofill="no"
             android:inputType="numberDecimal" />
@@ -102,6 +102,7 @@
             android:id="@+id/button_calculate"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:layout_below="@id/text_view_total_expense_value"
             android:layout_centerHorizontal="true"
             android:backgroundTint="?attr/colorButtonNormal"
