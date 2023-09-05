@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             setSupportActionBar(toolbar)
 
-            textViewTotalExpense.text = NumberFormat
+            textViewTotalExpenseValue.text = NumberFormat
                 .getCurrencyInstance()
                 .format(0)
 
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         val totalExpense = (distance.toDouble() * price.toDouble()) / autonomy.toDouble()
 
-        binding.textViewTotalExpense.text = NumberFormat
+        binding.textViewTotalExpenseValue.text = NumberFormat
             .getCurrencyInstance()
             .format(totalExpense)
     }
