@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         tools:context=".MainActivity">
 
         <androidx.appcompat.widget.Toolbar
@@ -22,43 +21,48 @@
             android:id="@+id/edit_text_distance"
             android:layout_width="320dp"
             android:layout_height="48dp"
-            android:layout_gravity="center"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:hint="@string/hint_distancia"
             android:importantForAutofill="no"
             android:inputType="numberDecimal" />
 
         <TextView
+            android:id="@+id/text_view_quilometers_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_below="@id/edit_text_distance"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:text="@string/total_de_quilometros" />
-
 
         <EditText
             android:id="@+id/edit_text_price"
             android:layout_width="320dp"
             android:layout_height="48dp"
-            android:layout_gravity="center"
+            android:layout_below="@id/text_view_quilometers_total"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
             android:hint="@string/hint_preco"
             android:importantForAutofill="no"
             android:inputType="numberDecimal" />
 
         <TextView
+            android:id="@+id/text_view_price_per_liter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_below="@+id/edit_text_price"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:text="@string/preco_por_litro" />
-
 
         <EditText
             android:id="@+id/edit_text_autonomy"
             android:layout_width="320dp"
             android:layout_height="48dp"
-            android:layout_gravity="center"
+            android:layout_below="@+id/text_view_price_per_liter"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
             android:hint="@string/hint_autonomia"
             android:importantForAutofill="no"
@@ -66,24 +70,29 @@
             android:maxWidth="488dp" />
 
         <TextView
+            android:id="@+id/text_view_kms_per_liter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_below="@id/edit_text_autonomy"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:text="@string/kms_por_litro" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="38dp"
-            android:text="@string/gasto_total" />
 
         <TextView
             android:id="@+id/text_view_total_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_below="@id/text_view_kms_per_liter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"
+            android:text="@string/gasto_total" />
+
+        <TextView
+            android:id="@+id/text_view_total_expense_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_total_expense"
+            android:layout_centerHorizontal="true"
             android:layout_marginVertical="18dp"
             android:textColor="?attr/colorPrimaryDark"
             android:textSize="36sp"
@@ -93,10 +102,11 @@
             android:id="@+id/button_calculate"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
+            android:layout_below="@id/text_view_total_expense_value"
+            android:layout_centerHorizontal="true"
             android:backgroundTint="?attr/colorButtonNormal"
             android:text="@string/button_calcular"
             android:textColor="@color/white" />
-    </LinearLayout>
+    </RelativeLayout>
+
 </ScrollView>
